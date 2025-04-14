@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML5 Elements and Forms</title>
+    <style>
+        /* Basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        legend {
+            padding: 0 5px;
+            font-weight: bold;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced HTML5 Elements Demonstration</h1>
+    </header>
+
+    <!-- Ordered List with Roman Numerals -->
+    <section id="ordered-list">
+        <h2>Ordered List with Roman Numerals</h2>
+        <ol type="I">
+            <li>First item - HTML5 Structure</li>
+            <li>Second item - Semantic Elements</li>
+            <li>Third item - Advanced Forms</li>
+            <li>Fourth item - Multimedia</li>
+            <li>Fifth item - Validation</li>
+        </ol>
+    </section>
+
+    <!-- External Image from Pexels -->
+    <section id="image">
+        <h2>External Image from Pexels</h2>
+        <figure>
+            <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg" 
+                 alt="Beautiful landscape with river and mountains" 
+                 width="600">
+            <figcaption>Scenic landscape photo from Pexels.com</figcaption>
+        </figure>
+    </section>
+
+    <!-- Contacts Table -->
+    <section id="contacts">
+        <h2>Contacts Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Smith</td>
+                    <td>123 Main St, Anytown</td>
+                    <td>555-0101</td>
+                    <td>john.smith@example.com</td>
+                </tr>
+                <tr>
+                    <td>Sarah Johnson</td>
+                    <td>456 Oak Ave, Somewhere</td>
+                    <td>555-0102</td>
+                    <td>sarah.j@example.com</td>
+                </tr>
+                <tr>
+                    <td>Michael Brown</td>
+                    <td>789 Pine Rd, Nowhere</td>
+                    <td>555-0103</td>
+                    <td>m.brown@example.com</td>
+                </tr>
+                <tr>
+                    <td>Emily Davis</td>
+                    <td>321 Elm Blvd, Anycity</td>
+                    <td>555-0104</td>
+                    <td>emily.d@example.com</td>
+                </tr>
+                <tr>
+                    <td>David Wilson</td>
+                    <td>654 Maple Ln, Yourtown</td>
+                    <td>555-0105</td>
+                    <td>dwilson@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="registration">
+        <h2>Registration Form</h2>
+        <form id="regForm" novalidate>
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div>
+                    <label for="fullname">Full Name:*</label>
+                    <input type="text" id="fullname" name="fullname" 
+                           placeholder="Enter your full name" 
+                           required 
+                           minlength="3"
+                           pattern="[A-Za-z ]+">
+                    <small>Must be at least 3 characters (letters and spaces only)</small>
+                </div>
+                
+                <div>
+                    <label for="email">Email Address:*</label>
+                    <input type="email" id="email" name="email" 
+                           placeholder="your.email@example.com" 
+                           required>
+                </div>
+                
+                <div>
+                    <label for="password">Password:*</label>
+                    <input type="password" id="password" name="password" 
+                           placeholder="Create a password" 
+                           required 
+                           minlength="8"
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <small>Must be at least 8 characters with 1 uppercase, 1 lowercase, and 1 number</small>
+                </div>
+                
+                <div>
+                    <label for="dob">Date of Birth:*</label>
+                    <input type="date" id="dob" name="dob" 
+                           required 
+                           min="1900-01-01" 
+                           max="2025-12-31">
+                </div>
+            </fieldset>
+            
+            <!-- Additional Information -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <div>
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">-- Select a Country --</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label>Subscription Plan:*</label>
+                    <div>
+                        <input type="radio" id="plan-basic" name="plan" value="basic" required>
+                        <label for="plan-basic">Basic ($9.99/month)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="plan-standard" name="plan" value="standard">
+                        <label for="plan-standard">Standard ($19.99/month)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="plan-premium" name="plan" value="premium">
+                        <label for="plan-premium">Premium ($29.99/month)</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Interests (select all that apply):</label>
+                    <div>
+                        <input type="checkbox" id="interest-tech" name="interests" value="technology">
+                        <label for="interest-tech">Technology</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interest-sports" name="interests" value="sports">
+                        <label for="interest-sports">Sports</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interest-music" name="interests" value="music">
+                        <label for="interest-music">Music</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interest-travel" name="interests" value="travel">
+                        <label for="interest-travel">Travel</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" 
+                              placeholder="Any additional information..." 
+                              rows="4"></textarea>
+                </div>
+            </fieldset>
+            
+            <!-- Terms and Submission -->
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions*</label>
+            </div>
+            
+            <div>
+                <button type="submit">Register</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section id="multimedia">
+        <h2>Multimedia Elements</h2>
+        
+        <h3>Audio Example</h3>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h3>Video Example</h3>
+        <video width="600" controls poster="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Advanced HTML5 Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
